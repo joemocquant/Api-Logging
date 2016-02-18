@@ -107,16 +107,17 @@ end
 
 local function aggregateTableHtml(tab, level, title)
 
-	local str = "<table class='aggregate'><th colspan='2'>" .. title .. "</th>"
-	str = str .. "<tr class='title'>" .. 
-					"<td>IP</td>" .. 
-					"<td>Count</td>" .. 
-				"</tr>"
+	local str = "<table class='aggregate'>" .. 
+					"<th colspan='2'>" .. title .. "</th>"
+	str = str .. 		"<tr class='aggregate_title'>" .. 
+							"<td>IP</td>" .. 
+							"<td>Count</td>" .. 
+						"</tr>"
 
 	for k, records in pairs(tab) do
 
 		local timestamp = os.date("%y/%m/%d %H:%M:%S", records[1] * level)
-		str = str .. "<th colspan='2'>" .. timestamp .. "</th>"
+		str = str .. "<th class='aggregate_title' colspan='2'>" .. timestamp .. "</th>"
 
 
 		for ip, count in pairs(records[2]) do

@@ -1,5 +1,5 @@
 body {
-
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .raw, .aggregate {
@@ -7,6 +7,7 @@ body {
 	border-collapse: collapse;
 	margin-left: 5;
 	margin-right: 5;
+	font-size: 15;
 }
 
 .raw  {
@@ -17,7 +18,36 @@ body {
 	width: 15%;
 }
 
+.aggregate_title {
+	text-align: left;
+	background-color: #bbbbbb;
+	font-size: 12;
+	font-weight: normal;
+	height: 20px;
+}
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #111111;
 }
+
+
+th, td { 
+	height: 30px; 
+	transition: all 0.2s;
+}
+
+
+tr:nth-child(even) td { 
+	background: #F1F1F1; 
+}
+
+
+tr:nth-child(odd) td {
+	background: #FEFEFE; 
+}  
+
+tr td:hover { 
+	background: #666; 
+	color: #FFF; 
+}
+
