@@ -28,7 +28,8 @@ local function buildRawTables(logset)
 
 	local logs = {}
 	logs["/v1/logs"] = {}
-
+	logs["/v1/hello-world/logs"] = {}
+	
 	for k, entry in pairs(logset) do
 		local endpoint = entry["endpoint"]
 		
