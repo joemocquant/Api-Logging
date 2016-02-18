@@ -1,0 +1,17 @@
+body {
+
+}
+
+table {
+	float: left;
+	width: 25%;
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin-left: 5;
+	margin-right: 5;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+}
