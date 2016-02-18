@@ -2,13 +2,19 @@ body {
 
 }
 
-table {
+.raw, .aggregate {
 	float: left;
-	width: 25%;
 	border-collapse: collapse;
-	border: 1px solid black;
 	margin-left: 5;
 	margin-right: 5;
+}
+
+.raw  {
+	width: 29%;
+}
+
+.aggregate {
+	width: 15%;
 }
 
 
