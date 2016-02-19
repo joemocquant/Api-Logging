@@ -13,10 +13,19 @@ end
 local function getJson(url)
 
 	local httpc = http.new()
+	httpc:set_timeout(10)
+
 	local res, err = httpc:request_uri(url, {method = "GET",
 											headers = {["Content-Type"] = "application/json",}})
 
 	httpc:close()
+
+	if not res then
+		ngx.say("failed to request API: ", err)
+		return ngx.exit(ngx.HTTP_OK)
+  	end
+
+	ngx.status = res.status
 	return res.body
 end
 
@@ -137,6 +146,7 @@ local function generateLogsHtml()
 
 	local level = 60 -- 60s (minute aggregte level)
 	local rawJson = cjson.decode(getJson("http://" .. getIp() .. ":5000/v1/logs"))
+
 	local rawTables = buildRawTables(rawJson["logset"])
 
 	local rawTableLogs = rawTables["/v1/logs"]
@@ -161,6 +171,7 @@ local function generateLogsHtml()
 	html = html .. "</body></html>"
 
 	ngx.header.content_type = "text/html"
+
 	ngx.say(html)
 	return ngx.exit(ngx.HTTP_OK)
 end
