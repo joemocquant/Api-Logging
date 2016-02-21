@@ -1,53 +1,67 @@
 body {
-	font-family: Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .raw, .aggregate {
-	float: left;
-	border-collapse: collapse;
-	margin-left: 5;
-	margin-right: 5;
-	font-size: 15;
+    float: left;
+    border-collapse: collapse;
+    margin-left: 5;
+    margin-right: 5;
+    font-size: 13;
 }
 
 .raw  {
-	width: 29%;
+    width: 24%;
 }
 
 .aggregate {
-	width: 15%;
+    width: 24%;
 }
 
-.aggregate_title {
-	text-align: left;
-	background-color: #bbbbbb;
-	font-size: 12;
-	font-weight: normal;
-	height: 20px;
+.title {
+    height: 40px;
+}
+
+tr.sub_title td {
+    background: #BBBBBB;
+    height: 35px;
+}
+
+.range {
+    text-align: left;
+    font-weight: normal;
+    font-size: 12;
+    background-color: #DDDDDD;
+    height: 18px;
 }
 
 table, th, td {
     border: 1px solid #111111;
 }
 
-
-th, td { 
-	height: 30px; 
-	transition: all 0.2s;
+th, td {
+    height: 25px;
 }
 
-
-tr:nth-child(even) td { 
-	background: #F1F1F1; 
+tr:nth-child(even)  {
+    background: #F1F1F1;
 }
 
-
-tr:nth-child(odd) td {
-	background: #FEFEFE; 
-}  
-
-tr td:hover { 
-	background: #666; 
-	color: #FFF; 
+tr:nth-child(odd)  {
+    background: #FEFEFE;
 }
 
+tr.sub_title:hover td {
+    background: #666;
+    color: #FFFFFF;
+}
+
+tr:hover {
+    background: #666;
+    color: #FFFFFF;
+}
+
+.range:hover {
+    background: #AAA;
+    color: #FFFFFF;
+}
